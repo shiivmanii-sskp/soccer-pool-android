@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  /* Safe area inset top with fallback for Capacitor CSS variables and zero */
+  --sat: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));
+  /* Main menu top header offset: moves down by ~25-35dp to ensure safe clearance below Android status bar (>=62px) */
+  --menu-top-offset: max(calc(var(--sat) + 26px), 62px);
+  /* Top control offset for match scoreboard: guarantees comfortable spacing (>=52px) below Android status bar */
+  --top-bar-offset: max(calc(var(--sat) + 16px), 52px);
+  /* Pitch container top padding to sit cleanly below the scoreboard badge */
+  --pitch-pt: max(calc(var(--sat) + 76px), 120px);
+  /* Bot thinking banner offset */
+  --bot-thinking-top: max(calc(var(--sat) + 72px), 114px);
+}
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Fredoka', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s ease-in-out infinite;
+}

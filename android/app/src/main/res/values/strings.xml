@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Soccer Pool By Shiv</string>
+    <string name="title_activity_main">Soccer Pool By Shiv</string>
+    <string name="package_name">com.shiivmanii.soccerpool</string>
+    <string name="custom_url_scheme">com.shiivmanii.soccerpool</string>
+</resources>
